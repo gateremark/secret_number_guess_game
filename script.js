@@ -19,6 +19,35 @@ const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
+//Added by me:
+const stylePage = function () {
+  document.querySelector('h1').style.color = '#030303';
+  document.querySelector('.footer').style.color = '#030303';
+  document.querySelector('.label-score').style.color = '#030303';
+  document.querySelector('.between').style.color = '#030303';
+  document.querySelector('.label-highscore').style.color = '#030303';
+  document.querySelector('.guess').style.borderColor = '#030303';
+  document.querySelector('.guess').style.color = '#030303';
+  document.querySelector('.check').style.backgroundColor = '#030303';
+  document.querySelector('.check').style.color = '#eee';
+  document.querySelector('.again').style.backgroundColor = '#030303';
+  document.querySelector('.again').style.color = '#eee';
+};
+
+const revertPage = function () {
+  document.querySelector('h1').style.color = '#eee';
+  document.querySelector('.footer').style.color = '#eee';
+  document.querySelector('.label-score').style.color = '#eee';
+  document.querySelector('.between').style.color = '#eee';
+  document.querySelector('.label-highscore').style.color = '#eee';
+  document.querySelector('.guess').style.borderColor = '#eee';
+  document.querySelector('.guess').style.color = '#eee';
+  document.querySelector('.check').style.backgroundColor = '#eee';
+  document.querySelector('.check').style.color = '#030303';
+  document.querySelector('.again').style.backgroundColor = '#eee';
+  document.querySelector('.again').style.color = '#030303';
+};
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
@@ -35,17 +64,9 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#4bad2e';
     document.querySelector('.number').style.width = '30rem';
-    document.querySelector('h1').style.color = '#030303';
-    document.querySelector('.footer').style.color = '#030303';
-    document.querySelector('.label-score').style.color = '#030303';
-    document.querySelector('.between').style.color = '#030303';
-    document.querySelector('.label-highscore').style.color = '#030303';
-    document.querySelector('.guess').style.borderColor = '#030303';
-    document.querySelector('.guess').style.color = '#030303';
-    document.querySelector('.check').style.backgroundColor = '#030303';
-    document.querySelector('.check').style.color = '#fff';
-    document.querySelector('.again').style.backgroundColor = '#030303';
-    document.querySelector('.again').style.color = '#fff';
+
+    //(Added by Me)
+    stylePage();
 
     if (score > highscore) {
       highscore = score;
@@ -104,17 +125,6 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#030303';
   document.querySelector('.number').style.width = '15rem';
 
-  //Newly added by Me
-
-  document.querySelector('h1').style.color = '#fff';
-  document.querySelector('.footer').style.color = '#fff';
-  document.querySelector('.label-score').style.color = '#fff';
-  document.querySelector('.between').style.color = '#fff';
-  document.querySelector('.label-highscore').style.color = '#fff';
-  document.querySelector('.guess').style.borderColor = '#fff';
-  document.querySelector('.guess').style.color = '#fff';
-  document.querySelector('.check').style.backgroundColor = '#fff';
-  document.querySelector('.check').style.color = '#030303';
-  document.querySelector('.again').style.backgroundColor = '#fff';
-  document.querySelector('.again').style.color = '#030303';
+  //(Added by Me)
+  revertPage();
 });
